@@ -5,8 +5,6 @@ const { sortInventory, getProductNames, getProductPrices } = require('../actions
 const selectors = require('../utils/selectors');
 const users = require('../utils/users');
 
-const URL = 'https://www.saucedemo.com/inventory.html';
-
 const validUser = users.find(user => user.valid);
 if (!validUser) {
   throw new Error('No valid user provided for login.');
