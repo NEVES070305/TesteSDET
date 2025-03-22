@@ -1,4 +1,3 @@
-// utils/users.js
 module.exports = [
   {
     username: 'usuario1',
