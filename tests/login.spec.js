@@ -5,8 +5,6 @@ const { login, verifyLoginSuccess, verifyLoginFailure } = require("../actions/lo
 const selectors = require("../utils/selectors");
 const users = require("../utils/users");
 
-const URL =  'https://www.saucedemo.com/';
-
 users.forEach((user) => {
   if (user.valid) {
     test(`Login com o usuário válido: ${user.username} , esperando ser logado`, async ({ page }) => {
