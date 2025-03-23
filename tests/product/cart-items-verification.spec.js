@@ -1,10 +1,10 @@
 const { test } = require('@playwright/test');
-const { navigateToLoginPage } = require('../actions/navigationAction');
-const { login, verifyLoginSuccess } = require('../actions/loginAction');
-const { addDistinctRandomItemsToCart } = require('../actions/inventoryAction');
-const { verifyProductsInCart } = require('../actions/cartAction');
-const selectors = require('../utils/selectors');
-const users = require('../utils/users');
+const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
+const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
+const { addDistinctRandomItemsToCart } = require('../../actions/inventory/inventoryAction');
+const { verifyProductsInCart } = require('../../actions/inventory/cartAction');
+const selectors = require('../../utils/selectors');
+const users = require('../../utils/users');
 
 test.describe('Verificar Itens no Carrinho', () => {
   test.beforeEach(async ({ page }) => {

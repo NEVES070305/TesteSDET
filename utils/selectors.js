@@ -37,5 +37,14 @@ module.exports = {
   finishButton: '[data-test="finish"]',
   completeHeader: '.complete-header',  
   
-  errorMessage: '.error-message-container'
+  errorMessage: '.error-message-container',
+
+  // Seletor para o botão Cancel 
+  cancelButton: '[data-test="cancel"]',
+
+  // Seletores da página de detalhes do produto
+  productDetailName: '.inventory_details_name',
+  productDetailPrice: '.inventory_details_price',
+  backToProductsButton: '[data-test="back-to-products"]',
+  productDetailImage: '.inventory_details_img',
 };

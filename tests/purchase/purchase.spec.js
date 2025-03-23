@@ -1,12 +1,11 @@
-// tests/purchase.spec.js
 const { test, expect } = require('@playwright/test');
-const { navigateToLoginPage } = require('../actions/navigationAction');
-const { login, verifyLoginSuccess } = require('../actions/loginAction');
-const { checkoutStepOne } = require('../actions/checkoutAction');
-const { goToCheckoutStepOne } = require('../actions/checkoutNavigationAction');
-const { addDistinctRandomItemsToCart } = require('../actions/inventoryAction');
-const selectors = require('../utils/selectors');
-const users = require('../utils/users');
+const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
+const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
+const { checkoutStepOne } = require('../../actions/checkout/checkoutAction');
+const { goToCheckoutStepOne } = require('../../actions/checkout/checkoutNavigationAction');
+const { addDistinctRandomItemsToCart } = require('../../actions/inventory/inventoryAction');
+const selectors = require('../../utils/selectors');
+const users = require('../../utils/users');
 
 test('Deve iniciar o processo de compra (Checkout Step One)', async ({ page }) => {
 

@@ -1,9 +1,9 @@
 const { test, expect } = require('@playwright/test');
-const { navigateToLoginPage } = require('../actions/navigationAction');
-const { login, verifyLoginSuccess } = require('../actions/loginAction');
-const { sortInventory, getProductNames, getProductPrices } = require('../actions/inventoryAction');
-const selectors = require('../utils/selectors');
-const users = require('../utils/users');
+const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
+const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
+const { sortInventory, getProductNames, getProductPrices } = require('../../actions/inventory/inventoryAction');
+const selectors = require('../../utils/selectors');
+const users = require('../../utils/users');
 
 const validUser = users.find(user => user.valid);
 if (!validUser) {

@@ -1,11 +1,11 @@
-const { test, expect } = require('@playwright/test');
-const { addDistinctRandomItemsToCart } = require('../actions/inventoryAction');
-const { navigateToLoginPage } = require('../actions/navigationAction');
-const { login, verifyLoginSuccess } = require('../actions/loginAction');
-const { goToCheckoutStepOne } = require('../actions/checkoutNavigationAction');
-const { checkoutStepOneIncomplete } = require('../actions/checkoutAction');
-const selectors = require('../utils/selectors');
-const users = require('../utils/users');
+const { test } = require('@playwright/test');
+const { addDistinctRandomItemsToCart } = require('../../actions/inventory/inventoryAction');
+const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
+const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
+const { goToCheckoutStepOne } = require('../../actions/checkout/checkoutNavigationAction');
+const { checkoutStepOneIncomplete } = require('../../actions/checkout/checkoutAction');
+const selectors = require('../../utils/selectors');
+const users = require('../../utils/users');
 
 test('Deve exibir erro ao tentar continuar checkout sem preencher todos os dados', async ({ page }) => {
   // Seleciona um usuário válido

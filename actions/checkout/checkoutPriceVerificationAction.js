@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const selectors = require('../utils/selectors');
+const selectors = require('../../utils/selectors');
 
 async function verifyCheckoutPrices(page, expectedSubtotal, taxRate = 0.08) {
   // Extrai o subtotal exibido na página

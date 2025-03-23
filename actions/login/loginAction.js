@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const selectors = require('../utils/selectors');
+const selectors = require('../../utils/selectors');
 
 async function login(page, username, password) {
   await page.fill(selectors.usernameInput, username);
