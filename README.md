@@ -161,17 +161,6 @@ npx playwright test --project=chromium
 
 ---
 
-## Uso de Storage State (Opcional)
-
-Caso você deseje **centralizar o login** e evitar repetições, pode usar a abordagem de **storageState**:
-
-1. **Gerar** o storageState para cada navegador (Chromium, Firefox, WebKit) via script, salvando em arquivos como `storageState.chromium.json`, `storageState.firefox.json`, `storageState.webkit.json`.
-2. **Configurar** o `playwright.config.js` para cada *project* usar o respectivo arquivo `storageState`.
-
-Dessa forma, os testes já iniciam logados.
-
----
-
 ## Observações Importantes
 
 - **Actions (Application Actions)**: Cada arquivo em `actions/` contém funções para encapsular um fluxo ou interação específica. Assim, os arquivos de teste (`*.spec.js`) ficam mais limpos, chamando apenas essas funções e fazendo asserções.  
