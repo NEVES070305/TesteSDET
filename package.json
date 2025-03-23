@@ -1,0 +1,22 @@
+{
+  "name": "testesdet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NEVES070305/TesteSDET.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NEVES070305/TesteSDET/issues"
+  },
+  "homepage": "https://github.com/NEVES070305/TesteSDET#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.11"
+  }
+}
