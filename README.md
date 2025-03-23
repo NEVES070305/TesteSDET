@@ -184,8 +184,8 @@ Dessa forma, os testes já iniciam logados.
 
 - [Documentação Oficial do Playwright](https://playwright.dev/docs/intro)  
 - [Test Runner do Playwright](https://playwright.dev/docs/test-intro)  
-- [Estratégias de Automação e Boas Práticas](https://playwright.dev/docs/test-runners)
-
+- [Application Actions: Use Them Instead of Page Objects](https://www.cypress.io/blog/stop-using-page-objects-and-start-using-app-actions)
+- [Por que o “Application Actions” é melhor do que o “Page Object” nos testes automatizados](https://medium.com/@jonasdaviladasilva/por-que-o-application-actions-%C3%A9-melhor-do-que-o-page-object-nos-testes-automatizados-1987fdd6857b)
 ---
 
 ## Contribuindo
