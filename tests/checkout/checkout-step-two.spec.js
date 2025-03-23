@@ -2,7 +2,7 @@ const { test } = require('@playwright/test');
 const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
 const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
 const { addDistinctRandomItemsToCart } = require('../../actions/inventory/inventoryAction');
-const { goToCheckoutStepOne } = require('../../actions/checkout/checkoutNavigationAction');
+const { goToCheckoutStepOne } = require('../../actions/navigation/checkoutNavigationAction');
 const { checkoutStepOne } = require('../../actions/checkout/checkoutAction');
 const { verifyProductsInCart } = require('../../actions/inventory/cartAction');
 const { verifyCheckoutPrices } = require('../../actions/checkout/checkoutPriceVerificationAction');
@@ -10,12 +10,13 @@ const selectors = require('../../utils/selectors');
 const users = require('../../utils/users');
 
 test('Checkout Step Two - Verificação de Itens e Preços', async ({ page }) => {
-  // Seleciona um usuário válido e faz login
-  const validUser = users.find(u => u.valid);
-  if (!validUser) throw new Error('Nenhum usuário válido disponível.');
-  await navigateToLoginPage(page);
-  await login(page, validUser.username, validUser.password);
-  await verifyLoginSuccess(page, selectors.homePageTitle);
+  test.beforeEach(async ({ page }) => {
+    const validUser = users.find(u => u.valid);
+    if (!validUser) throw new Error('Nenhum usuário válido disponível.');
+    await navigateToLoginPage(page);
+    await login(page, validUser.username, validUser.password);
+    await verifyLoginSuccess(page, selectors.homePageTitle);
+  });
 
   // Adiciona 2 itens aleatórios ao carrinho
   await addDistinctRandomItemsToCart(page);

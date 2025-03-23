@@ -1,6 +1,10 @@
 const { expect } = require('@playwright/test');
 const selectors = require('../../utils/selectors');
 
+/**
+ * Navega do carrinho para a tela de Checkout Step One.
+ * @param {import('@playwright/test').Page} page - A instância da página do Playwright.
+ */
 async function goToCheckoutStepOne(page) {
 
   await page.click(selectors.cartLink);

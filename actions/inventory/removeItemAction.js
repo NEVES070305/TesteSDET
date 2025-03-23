@@ -6,18 +6,17 @@
  * @param {number} countToAdd - Número total de itens adicionados (normalmente addedItems.length).
  * @returns {Promise<{ finalCount: number, itemsToRemove: Array, itemsToKeep: Array }>}
  */
-
 async function removeRandomItemsFromInventory(page, addedItems, countToAdd) {
   
   let removeCount;
   if (countToAdd === 1) {
     removeCount = 1; 
   } else {
-    // Remove aleatoriamente entre 1 e countToAdd - 1 itens
+    // Remove aleatoriamente
     removeCount = Math.floor(Math.random() * (countToAdd - 1)) + 1;
   }
 
-  // Embaralha os itens adicionados usando o algoritmo Fisher-Yates
+  // Embaralha os itens adicionados
   const shuffled = [...addedItems];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -30,8 +29,6 @@ async function removeRandomItemsFromInventory(page, addedItems, countToAdd) {
 
   // Remove cada item selecionado, chamando a função que remove o item específico
   for (const item of itemsToRemove) {
-    console.log(itemsToRemove);
-    console.log(item.id);
     await removeSpecificItemFromInventory(page, item.id);
   }
 

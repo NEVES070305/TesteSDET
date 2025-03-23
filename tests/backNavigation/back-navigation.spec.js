@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test');
 const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
 const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
-const { goToCheckoutStepOne } = require('../../actions/checkout/checkoutNavigationAction');
+const { goToCheckoutStepOne } = require('../../actions/navigation/checkoutNavigationAction');
 const { checkoutStepOne } = require('../../actions/checkout/checkoutAction');
 const { cancelCheckoutStepTwo, cancelCheckoutStepOne } = require('../../actions/navigation/backNavigationAction');
 const selectors = require('../../utils/selectors');
@@ -11,8 +11,6 @@ test.describe('Back Navigation no Fluxo de Checkout', () => {
   test.beforeEach(async ({ page }) => {
     const validUser = users.find(u => u.valid);
     if (!validUser) throw new Error('Nenhum usuário válido disponível.');
-    
-    // Login e navegação até a página de inventário
     await navigateToLoginPage(page);
     await login(page, validUser.username, validUser.password);
     await verifyLoginSuccess(page, selectors.homePageTitle);
