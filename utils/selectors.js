@@ -17,6 +17,25 @@ module.exports = {
   buttonAdd: 'button[data-test^="add-to-cart-"]',
   cartLink: '.shopping_cart_link',
   cartBadge: '.shopping_cart_badge',
+  checkoutButton: '[data-test="checkout"]',
 
-  cartItemsSelected: '.cart_item .inventory_item_name'
+  //Cart
+  cartItemsSelected: '.cart_item .inventory_item_name',
+
+  // Seletores do Checkout Step One
+  firstNameInput: '[data-test="firstName"]',
+  lastNameInput: '[data-test="lastName"]',
+  postalCodeInput: '[data-test="postalCode"]',
+  continueButton: '[data-test="continue"]',
+
+  // Seletores do Checkout Step Two
+  summarySubtotalLabel: '.summary_subtotal_label',
+  summaryTaxLabel: '.summary_tax_label',
+  summaryTotalLabel: '.summary_total_label',
+  
+  // Seletores para finalizar a compra
+  finishButton: '[data-test="finish"]',
+  completeHeader: '.complete-header',  
+  
+  errorMessage: '.error-message-container'
 };
