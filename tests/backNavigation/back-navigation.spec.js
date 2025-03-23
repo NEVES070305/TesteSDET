@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test');
 const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
 const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
-const { goToCheckoutStepOne } = require('../../actions/checkout/checkoutNavigationAction');
+const { goToCheckoutStepOne } = require('../../actions/navigation/checkoutNavigationAction');
 const { checkoutStepOne } = require('../../actions/checkout/checkoutAction');
 const { cancelCheckoutStepTwo, cancelCheckoutStepOne } = require('../../actions/navigation/backNavigationAction');
 const selectors = require('../../utils/selectors');
