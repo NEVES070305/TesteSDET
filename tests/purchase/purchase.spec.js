@@ -8,7 +8,6 @@ const selectors = require('../../utils/selectors');
 const users = require('../../utils/users');
 
 test('Deve iniciar o processo de compra (Checkout Step One)', async ({ page }) => {
-
   const validUser = users.find(u => u.valid);
   if (!validUser) throw new Error('Nenhum usuário válido disponível.');
 

@@ -11,8 +11,6 @@ test.describe('Back Navigation no Fluxo de Checkout', () => {
   test.beforeEach(async ({ page }) => {
     const validUser = users.find(u => u.valid);
     if (!validUser) throw new Error('Nenhum usuário válido disponível.');
-    
-    // Login e navegação até a página de inventário
     await navigateToLoginPage(page);
     await login(page, validUser.username, validUser.password);
     await verifyLoginSuccess(page, selectors.homePageTitle);

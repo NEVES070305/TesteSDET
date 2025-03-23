@@ -9,7 +9,6 @@ test.describe('Adiciona item aleatório e verificar quantidade', () => {
   test.beforeEach(async ({ page }) => {
     const validUser = users.find(u => u.valid);
     if (!validUser) throw new Error('Nenhum usuário válido disponível.');
-
     await navigateToLoginPage(page);
     await login(page, validUser.username, validUser.password);
     await verifyLoginSuccess(page, selectors.homePageTitle);

@@ -29,8 +29,6 @@ async function removeRandomItemsFromInventory(page, addedItems, countToAdd) {
 
   // Remove cada item selecionado, chamando a função que remove o item específico
   for (const item of itemsToRemove) {
-    console.log(itemsToRemove);
-    console.log(item.id);
     await removeSpecificItemFromInventory(page, item.id);
   }
 

@@ -5,14 +5,10 @@ const { sortInventory, getProductNames, getProductPrices } = require('../../acti
 const selectors = require('../../utils/selectors');
 const users = require('../../utils/users');
 
-const validUser = users.find(user => user.valid);
-if (!validUser) {
-  throw new Error('No valid user provided for login.');
-}
-
 test.describe('Ordenação/Filtragem do Inventário', () => {
-  // Navega até a página de login e efetua login com um usuário válido
   test.beforeEach(async ({ page }) => {
+    const validUser = users.find(u => u.valid);
+    if (!validUser) throw new Error('Nenhum usuário válido disponível.');
     await navigateToLoginPage(page);
     await login(page, validUser.username, validUser.password);
     await verifyLoginSuccess(page, selectors.homePageTitle);
