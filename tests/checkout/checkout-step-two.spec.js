@@ -1,13 +1,13 @@
 const { test } = require('@playwright/test');
-const { navigateToLoginPage } = require('../actions/navigationAction');
-const { login, verifyLoginSuccess } = require('../actions/loginAction');
-const { addDistinctRandomItemsToCart } = require('../actions/inventoryAction');
-const { goToCheckoutStepOne } = require('../actions/checkoutNavigationAction');
-const { checkoutStepOne } = require('../actions/checkoutAction');
-const { verifyProductsInCart } = require('../actions/cartAction');
-const { verifyCheckoutPrices } = require('../actions/checkoutPriceVerificationAction');
-const selectors = require('../utils/selectors');
-const users = require('../utils/users');
+const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
+const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
+const { addDistinctRandomItemsToCart } = require('../../actions/inventory/inventoryAction');
+const { goToCheckoutStepOne } = require('../../actions/checkout/checkoutNavigationAction');
+const { checkoutStepOne } = require('../../actions/checkout/checkoutAction');
+const { verifyProductsInCart } = require('../../actions/inventory/cartAction');
+const { verifyCheckoutPrices } = require('../../actions/checkout/checkoutPriceVerificationAction');
+const selectors = require('../../utils/selectors');
+const users = require('../../utils/users');
 
 test('Checkout Step Two - Verificação de Itens e Preços', async ({ page }) => {
   // Seleciona um usuário válido e faz login

@@ -1,9 +1,8 @@
-// tests/login.spec.js
-const { chromium, test, beforeAll } = require("@playwright/test");
-const { navigateToLoginPage } = require("../actions/navigationAction");
-const { login, verifyLoginSuccess, verifyLoginFailure } = require("../actions/loginAction");
-const selectors = require("../utils/selectors");
-const users = require("../utils/users");
+const { test } = require("@playwright/test");
+const { navigateToLoginPage } = require("../../actions/navigation/navigationAction");
+const { login, verifyLoginSuccess, verifyLoginFailure } = require("../../actions/login/loginAction");
+const selectors = require("../../utils/selectors");
+const users = require("../../utils/users");
 
 users.forEach((user) => {
   if (user.valid) {

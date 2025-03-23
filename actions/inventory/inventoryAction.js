@@ -5,7 +5,7 @@
  * @param {string} sortOption
  */
 const { expect } = require('@playwright/test');
-const selectors = require('../utils/selectors');
+const selectors = require('../../utils/selectors');
 
 async function sortInventory(page, sortOption) {
   await page.waitForSelector(selectors.sortDropdown, { timeout: 10000 });

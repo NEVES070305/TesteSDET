@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const selectors = require('../utils/selectors');
+const selectors = require('../../utils/selectors');
 
 async function finishPurchase(page) {
   // Aguarda o botão de finalizar a compra e clica nele

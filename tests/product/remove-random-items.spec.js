@@ -1,11 +1,11 @@
-const { test, expect } = require('@playwright/test');
-const { navigateToLoginPage } = require('../actions/navigationAction');
-const { login, verifyLoginSuccess } = require('../actions/loginAction');
-const { verifyCartBadgeCount, addDistinctRandomItemsToCart } = require('../actions/inventoryAction');
-const { removeRandomItemsFromInventory } = require('../actions/removeItemAction');
-const { verifyProductsNotInCart } = require('../actions/cartAction');
-const selectors = require('../utils/selectors');
-const users = require('../utils/users');
+const { test } = require('@playwright/test');
+const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
+const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
+const { verifyCartBadgeCount, addDistinctRandomItemsToCart } = require('../../actions/inventory/inventoryAction');
+const { removeRandomItemsFromInventory } = require('../../actions/inventory/removeItemAction');
+const { verifyProductsNotInCart } = require('../../actions/inventory/cartAction');
+const selectors = require('../../utils/selectors');
+const users = require('../../utils/users');
 
 
 test.describe('Remover Itens Aleatórios do Carrinho (a partir da Inventory)', () => {

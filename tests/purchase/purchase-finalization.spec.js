@@ -1,13 +1,12 @@
-// tests/purchase-finalization.spec.js
-const { test, expect } = require('@playwright/test');
-const { navigateToLoginPage } = require('../actions/navigationAction');
-const { login, verifyLoginSuccess } = require('../actions/loginAction');
-const { addDistinctRandomItemsToCart } = require('../actions/inventoryAction');
-const { goToCheckoutStepOne } = require('../actions/checkoutNavigationAction');
-const { checkoutStepOne } = require('../actions/checkoutAction');
-const { finishPurchase } = require('../actions/finishPurchaseAction');
-const selectors = require('../utils/selectors');
-const users = require('../utils/users');
+const { test } = require('@playwright/test');
+const { navigateToLoginPage } = require('../../actions/navigation/navigationAction');
+const { login, verifyLoginSuccess } = require('../../actions/login/loginAction');
+const { addDistinctRandomItemsToCart } = require('../../actions/inventory/inventoryAction');
+const { goToCheckoutStepOne } = require('../../actions/checkout/checkoutNavigationAction');
+const { checkoutStepOne } = require('../../actions/checkout/checkoutAction');
+const { finishPurchase } = require('../../actions/inventory/finishPurchaseAction');
+const selectors = require('../../utils/selectors');
+const users = require('../../utils/users');
 
 test('Finalização da compra - fluxo completo', async ({ page }) => {
   const validUser = users.find(u => u.valid);

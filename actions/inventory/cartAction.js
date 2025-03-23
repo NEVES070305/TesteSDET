@@ -1,5 +1,3 @@
-// actions/cartAction.js
-
 const { expect } = require('@playwright/test');
 
 /**

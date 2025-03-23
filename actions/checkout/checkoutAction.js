@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const selectors = require('../utils/selectors');
+const selectors = require('../../utils/selectors');
 /**
  * Preenche o formulário de checkout (Step One) e clica no botão "Continue".
  *
