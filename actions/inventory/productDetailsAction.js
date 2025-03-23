@@ -23,14 +23,14 @@ async function viewAndVerifyRandomProductDetails(page) {
   // Clica no produto selecionado
   await productsLocator.nth(randomIndex).click();
   
-  // Aguarda a navegação para a página de detalhes do produto (ex.: "inventory-item.html")
+  // Aguarda a navegação para a página de detalhes do produto
   await expect(page).toHaveURL(/inventory-item\.html/);
   
   // Verifica se o nome do produto na página de detalhes confere com o nome clicado
   const detailName = await page.locator(selectors.productDetailName).textContent();
   expect(detailName.trim()).toBe(productName.trim());
   
-  // Verifica se o preço está no formato esperado, ex.: "$29.99"
+  // Verifica se o preço está no formato esperado
   const priceText = await page.locator(selectors.productDetailPrice).textContent();
   expect(priceText).toMatch(/\$\d+\.\d{2}/);
   

@@ -1,6 +1,10 @@
 const { expect } = require('@playwright/test');
 const selectors = require('../../utils/selectors');
 
+/**
+ * Finaliza a compra na página de checkout.
+ * @param {import('@playwright/test').Page} page - A instância da página do Playwright.
+ */
 async function finishPurchase(page) {
   // Aguarda o botão de finalizar a compra e clica nele
   await page.waitForSelector(selectors.finishButton, { timeout: 5000 });

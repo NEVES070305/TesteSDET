@@ -8,6 +8,7 @@ const { expect } = require('@playwright/test');
  * @param {string[]} addedProductNames - Lista de nomes de produtos que devem estar presentes.
  */
 
+
 async function verifyProductsInCart(page, cartItemsSelector, addedProductNames) {
   // Obtém os nomes dos produtos listados no carrinho
   const cartProductNames = await page.$$eval(cartItemsSelector, items =>
@@ -19,7 +20,15 @@ async function verifyProductsInCart(page, cartItemsSelector, addedProductNames) 
     expect(cartProductNames).toContain(productName.name);
   }
 }
- 
+
+/**
+ * Verifica se os itens que deveriam ser removidos NÃO estão presentes no carrinho
+ *
+ * @param {import('@playwright/test').Page} page - A instância da página do Playwright.
+ * @param {string} cartItemsSelector - Seletor para os elementos que exibem os nomes dos produtos no carrinho.
+ * @param {Array<{ name: string }>} itemsToRemove - Lista de objetos removidos.
+ * @param {Array<{ name: string }>} itemsToKeep - Lista de objetos dos itens que permanecem no carrinho.
+ */
 async function verifyProductsNotInCart(page, cartItemsSelector, itemsToRemove, itemsToKeep) {
   // Utiliza o seletor passado para obter os nomes dos produtos no carrinho
   const cartProductNames = await page.$$eval(cartItemsSelector, elements =>
