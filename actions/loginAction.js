@@ -11,7 +11,7 @@ async function verifyLoginSuccess(page, expectedTitle) {
   await page.waitForLoadState('load');
   await expect(page).toHaveTitle(expectedTitle);
   await expect(page).toHaveURL(/inventory\.html$/);
-  await expect(page.locator('.inventory_list')).toBeVisible();
+  await expect(page.locator(selectors.inventoryList)).toBeVisible();
 }
 
 async function verifyLoginFailure(page, errorMessageSelector) {
