@@ -1,0 +1,14 @@
+version: '3'
+services:
+  playwright-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-playwright-tests
+    environment:
+      - ENV_VARIABLE=value
+    volumes:
+      - .:/app
+    ports:
+      - "9322:9323"
+    working_dir: /app
