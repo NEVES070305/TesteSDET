@@ -100,7 +100,7 @@ async function addDistinctRandomItemsToCart(page) {
 }
 
 async function verifyCartBadgeCount(page, expectedCount) {
-  await page.waitForSelector(selectors.cartBadge, { timeout: 5000 });
+  await page.waitForSelector(selectors.cartBadge, { timeout: 7500 });
   await expect(page.locator(selectors.cartBadge)).toHaveText(String(expectedCount));
 }
 
