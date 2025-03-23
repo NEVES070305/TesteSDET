@@ -10,13 +10,12 @@ const selectors = require('../../utils/selectors');
 const users = require('../../utils/users');
 
 test('Checkout Step Two - Verificação de Itens e Preços', async ({ page }) => {
-  test.beforeEach(async ({ page }) => {
-    const validUser = users.find(u => u.valid);
-    if (!validUser) throw new Error('Nenhum usuário válido disponível.');
-    await navigateToLoginPage(page);
-    await login(page, validUser.username, validUser.password);
-    await verifyLoginSuccess(page, selectors.homePageTitle);
-  });
+  // Seleciona um usuário válido e faz login
+  const validUser = users.find(u => u.valid);
+  if (!validUser) throw new Error('Nenhum usuário válido disponível.');
+  await navigateToLoginPage(page);
+  await login(page, validUser.username, validUser.password);
+  await verifyLoginSuccess(page, selectors.homePageTitle);
 
   // Adiciona 2 itens aleatórios ao carrinho
   await addDistinctRandomItemsToCart(page);
